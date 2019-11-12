@@ -1,0 +1,213 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x = 'hello, my name is Leon'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "22"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'n'"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "x[len(x)-1]       # Как вывести ПОСЛЕДНИЙ СИМВОЛ (и другие). пример. длина массива -1. Элемент массива"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "x.count('l')      # подсчитать КОЛИЧЕСТВО символов l  - эль.  Две маленьких l."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Hello, my name is leon'"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "                # ПЕРВЫЙ символ ЗАГЛАВНЫЙ в строке. остальные - МАЛЕНЬКИЕ\n",
+    "x.capitalize()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "HELLO, MY NAME IS LEON\n"
+     ]
+    }
+   ],
+   "source": [
+    "upper_cased = x.upper()  # перевод в ВЕРХНИЙ регистр и ЗАПИСЬ в НОВУЮ переменную \"upper-cased\"\n",
+    "print(upper_cased)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "hello, my name is leon\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "'hello, my name is Leon'"
+      ]
+     },
+     "execution_count": 18,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "lower_cased = x.lower()  # перевод в НИЖНИЙ регистр и ЗАПИСЬ в НОВУЮ переменную \"lower-cased\"\n",
+    "print(lower_cased)       # если вывести в print, то x.lower  -  сработает\n",
+    "x                        # если вывести просто   x   то строка НЕ ИЗМЕНТИСЯ, т.к. это ИСХОДНАЯ СТРОКА"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "True\n",
+      "False\n",
+      "False\n"
+     ]
+    }
+   ],
+   "source": [
+    "                        #  для ПРОВЕРКИ в каком регистре ВЕРХНЕМ или  НИЖНЕМ находятся буквы в переменной\n",
+    "\n",
+    "    print(upper_cased.isupper()) # в функции upper_cased ЗНАЧЕНИЕ ПЕРЕМЕННОЙ в верхнем регистре - isupper\n",
+    "print(lower_cased.islower()) # в функции lower_cased ЗНАЧЕНИЕ ПЕРЕМЕННОЙ в верхнем регистре - islower\n",
+    "print(x.isupper())           # в функции x ЗНАЧЕНИЕ ПЕРЕМЕННОЙ в верхнем регистре - isupper - НЕТ\n",
+    "print(x.islower())           # в функции x ЗНАЧЕНИЕ ПЕРЕМЕННОЙ в верхнем регистре - islower - НЕТ"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n",
+      "3\n",
+      "3\n",
+      "7\n",
+      "12\n"
+     ]
+    }
+   ],
+   "source": [
+    "                        # x.find(\"l\") Место на котором находится ПЕРВЫЙ СИМВОЛ - это ИНДЕКС СИМВОЛА\n",
+    "print(x.find('l'))         \n",
+    "print(x.find('l', 3))      # искать l начиная с 3-го индекса-символа (первые четыре - пропустить)\n",
+    "print(x.find('l', 3, 10))  # искать l начиная с 3-го индекса-символа по 10-й \n",
+    "print(x.find('m', 7, 15))\n",
+    "print(x.find('m', 8, 15))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

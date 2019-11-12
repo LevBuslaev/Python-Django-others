@@ -1,0 +1,339 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "hello, my name is Elias\n"
+     ]
+    }
+   ],
+   "source": [
+    "x = 'hello, my name is Elias'\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n",
+      "19\n",
+      "-1\n",
+      "7\n",
+      "12\n"
+     ]
+    }
+   ],
+   "source": [
+    "                # поиск индекса КОНКРЕТНОГО СИМВОЛА в строке 'x'\n",
+    "    \n",
+    "print(x.find('l'))    # НАПЕЧАТАТЬ индекс, на котором находится ПЕРВЫЙ символ 'l' (начиная с НУЛЯ).\n",
+    "print(x.find('l', 5)) # ищем символ l начиная с 5-го индекса в строке\n",
+    "print(x.find('l', 5, 10)) # ищем символ l начиная с 5-го по 10-й индекс в строке ( Ответ: в этом диапазоне нет символа 'l')\n",
+    "print(x.find('m', 7, 15)) # ищем символ m начиная с 7-го по 15-й индекс в строке (-1 означает - НЕТ СИМВОЛА)\n",
+    "print(x.find('m', 8, 15)) # ищем символ m начиная с 8-го по 15-й индекс в строке"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "7\n"
+     ]
+    }
+   ],
+   "source": [
+    "             # с помощью функции 'find' можно искать ИНДЕКС, с которого начинается ПОДСТРОКА(ZB: 'my')\n",
+    "print(x.find('my'))   # т.е. подстрока 'my' начинается с индекса '7'."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "False\n"
+     ]
+    }
+   ],
+   "source": [
+    "             # с помощью функции 'isalnum' можно выяснить. ВСЕ ЛИ элементы строки - БУКВЫ и ЧИСЛА(не др.символы) \n",
+    "print('123abc'.isalnum())   # ТОЛЬКО буквы и цифры/ функция 'isalnum' вызывается на экземпляре строки.\n",
+    "print('123abc!'.isalnum())  # НЕ ТОЛЬКО. Ещё и '!'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "False\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "  # с помощью функции 'isalpha' можно выяснить. ВСЕ ЛИ элементы строки - БУКВЫ\n",
+    "print('123abc'.isalpha())\n",
+    "print('abc'.isalpha())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "False\n"
+     ]
+    }
+   ],
+   "source": [
+    "            # проверка строки на ПУСТОТУ  (и на остутствие даже пустых символов-пробелов,возвращает 'False')\n",
+    "print(\"   \".isspace())   # Пустая строка  Да = True\n",
+    "print(\"\".isspace())     # Пустая строка, в смысле не содержит символов(даже пустых).ВОЗВРАЩАЕТ False "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "        # проверка на ПУСТОТУ строки и на ПОЛНОЕ ОТСУТСТВИЕ СИМВОЛОВ(даже ПУСТЫХ-т.е.ПРОБЕЛОВ)\n",
+    "        # empty_string - пустая строка(по русски)\n",
+    "empty_string = \"\"          # объявили пустую строку\n",
+    "print(empty_string ==\"\")   # сравнение empty_string с пустой строкой(даже без пробелов)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "#==============ВОТ ЛУЧШАЯ функция для проверки как пробелов, так и вообще символов==================\n",
+    "#=======================print(empty_string.strip() ==\"\")============================================\n",
+    "#===================================================================================================\n",
+    "\n",
+    "empty_string = \"\"                 # в строке НИЕГО, даже ПРОБЕЛОВ\n",
+    "print(empty_string.strip() ==\"\")  #   .strip() ПРОВЕРЯЕТ И НА ОТСУТСТВИЕ ЧЕГО-ЛИБО\n",
+    "\n",
+    "empty_string = \"  \"               # в строке пусто. только ПРОБЕЛЫ\n",
+    "print(empty_string.strip() ==\"\")  #   .strip() ПРОВЕРЯЕТ И НА ОТСУТСТВИЕ ПРОБЕЛОВ\n",
+    "\n",
+    "#====================== ЭТО УНИВЕРСАЛЬНЫЙ ВАРИАНТ ПРОВЕРКИ НА ПУСТОТУ СТРОКИ========================"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "empty\n"
+     ]
+    }
+   ],
+   "source": [
+    "                    # проверка. Является ли строка ПУСТОЙ ? ()\n",
+    "empty_string = \" \"   # ЕСТЬ ПРОБЕЛЫ - пустая строка. ПРОВЕРИЛИ\n",
+    "if not empty_string:\n",
+    "    print(\"not empty\")\n",
+    "else:\n",
+    "    print(\"empty\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "not empty\n"
+     ]
+    }
+   ],
+   "source": [
+    "empty_string = \"\"   # НЕТ ПРОБЕЛОВ - пустая строка. ПРОВЕРИЛИ. НО выдал \"не пусто\" = \"not empty\"(НЕ АДЕКВАТНО РАБОТАЕТ. ЛУЧШЕ см.выше  .strip() == \"\")\n",
+    "if not empty_string:\n",
+    "    print(\"not empty\")\n",
+    "else:\n",
+    "    print(\"empty\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "                            # проверка с каких символов начинается и заканчивается строка?\n",
+    "h = \"hello\"\n",
+    "print(h.startswith(\"hel\"))\n",
+    "print(h.endswith(\"lo\"))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'list'>\n",
+      "['he', '', 'o']\n",
+      "['h', 'llo']\n"
+     ]
+    }
+   ],
+   "source": [
+    "                         # разделение строки  \n",
+    "split = h.split('l')    # задали переменную split и разделитель строки  l\n",
+    "print(type(split))     # вывели ТИП выводимого результата функции split() - СПИСОК - list\n",
+    "print(split)          # разделитель l вывод hello без ll. осталось 'he' и 'o'\n",
+    "\n",
+    "split = h.split('e')     # задали другой разделитель 'e'\n",
+    "print(split)            # разделитель l вывел hello без ll. осталось 'he' и 'o'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['12', '10', '8', '10']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#  например Из csv-файла приходят данные в виде строки '12;10;8;10' Надо их сделать доступными числами\n",
+    "\n",
+    "data = \"12;10;8;10\"\n",
+    "separated_data = data.split(\";\")\n",
+    "print(separated_data)    # а затем их можно конвертировать в тип число int или float и работать :)))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "('Python ', 'is', ' fun')\n",
+      "('Python is fun', '', '')\n",
+      "('Python ', 'is', \" fun, isn't it\")\n"
+     ]
+    }
+   ],
+   "source": [
+    "# partition  функция разделяет. и содержит: часть ДО сепаратора, САМ СЕПАРАТОР и часть ПОСЛЕ сепаратора\n",
+    "python = \"Python is fun\"\n",
+    "print(python.partition('is'))\n",
+    "print(python.partition('not'))  # нет такого сепаратора. будет просто '' и части ПОСЛЕ тоже НЕТ. только ''\n",
+    "\n",
+    "python = \"Python is fun, isn't it\"\n",
+    "print(python.partition('is'))    #есть части и ДО и РАЗДЕЛИТЕЛЬ и ПОСЛЕ."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
