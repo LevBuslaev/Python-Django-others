@@ -1,0 +1,60 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "I'm a student and I'll become a \"strong\" programmer\n",
+      "C:\\Users\\GoodStudent\n",
+      "y\n",
+      "nesgt\n"
+     ]
+    }
+   ],
+   "source": [
+    "        # Исправитьтак,чтобы вывод соответствовал комментариям\n",
+    "print(\"I'm a student and I'll become a \"strong\" programmer\") #I'm a student and I'll become a \"strong\" programmer\n",
+    "print(\"C:\\Users\\GoodStudent\") #C:\\Users\\GoodStudent\n",
+    "\n",
+    "x = \"My name is Agent Smith\"\n",
+    "print(x[...]) #y\n",
+    "print(x[::]) #nesgt\n",
+    "    \n",
+    "    # мой ответ ниже!!!!!\n",
+    "    \n",
+    "print(\"I\\'m a student and I\\'ll become a \\\"strong\\\" programmer\") #I'm a student and I'll become a \"strong\" programmer\n",
+    "print(\"C:\\\\Users\\\\GoodStudent\") #C:\\Users\\GoodStudent\n",
+    "\n",
+    "x = \"My name is Agent Smith\"\n",
+    "print(x[1]) #y\n",
+    "print(x[3:18:3]) #nesgt"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
